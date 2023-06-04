@@ -212,7 +212,7 @@ app.post("/api/jobs", authenticateToken, async (req, res) => {
     const jobs = await Job.find({ businessOwnerId });
     res.json(jobs);
   } catch (error) {
-    res.status(500).json({ error: error.toString() });
+    res.status(500).json({ error: `error fetching jobs: ${error.toString()}` });
   }
 });
 
@@ -317,7 +317,7 @@ app.get("/api/square/oauth/callback", async (req, res) => {
     const encryptedAccessToken = encrypt(access_token);
     user.squareAccessToken = encryptedAccessToken;
     await user.save();
-    res.redirect("https://curious-cashflow.onrender.com/UserHome"); // replace with the actual route
+    res.redirect("https://curious-cashflow.onrender.com/UserHome");
   } catch (error) {
     res.status(500).send({ message: "Internal server error" });
   }
