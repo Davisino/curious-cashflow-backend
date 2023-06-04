@@ -29,7 +29,12 @@ BigInt.prototype.toJSON = function () {
 };
 
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: "http://localhost:3000" })); // restrict CORS to only your React app:
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:3000", "https://curious-cashflow.onrender.com/"],
+  })
+); // restrict CORS to only your React app:
 
 app.use(express.json()); // for parsing application/json
 app.use(
