@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://curious-cashflow.onrender.com/"],
+    origin: ["http://localhost:3000", "https://curious-cashflow.onrender.com"],
   })
 ); // restrict CORS to only your React app:
 
