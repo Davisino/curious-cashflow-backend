@@ -317,7 +317,7 @@ app.get("/api/square/oauth/callback", async (req, res) => {
     const encryptedAccessToken = encrypt(access_token);
     user.squareAccessToken = encryptedAccessToken;
     await user.save();
-    res.redirect("http://localhost:3000/userHome"); // replace with the actual route
+    res.redirect("https://curious-cashflow.onrender.com/UserHome"); // replace with the actual route
   } catch (error) {
     res.status(500).send({ message: "Internal server error" });
   }
