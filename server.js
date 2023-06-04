@@ -22,7 +22,7 @@ const client = new Client({
 
 const SQUARE_APP_SECRET = "sq0csp-ZpJ2m2k8POn3Vs2gQMccC7Cc4Gxc2Vvq9br6Z7KiVhs";
 const SQUARE_APP_REDIRECT_URL =
-  "http://localhost:3001/api/square/oauth/callback";
+  "https://curious-cashflow-api.onrender.com/api/square/oauth/callback";
 
 BigInt.prototype.toJSON = function () {
   return this.toString();
