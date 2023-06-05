@@ -333,7 +333,7 @@ app.get("/api/square/oauth/callback", async (req, res) => {
     await user.save();
     res.redirect("https://curious-cashflow.onrender.com/UserHome");
   } catch (error) {
-    res.status(500).send({ message: "Internal server error" });
+    res.status(500).send({ message: `Internal server error ${error}` });
   }
 });
 
