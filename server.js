@@ -296,8 +296,10 @@ app.get("/api/square/oauth/callback", async (req, res) => {
       console.log(req.session.oauthState);
       // the state does  not match, so abort the process
       return res.status(400).send(
-        `Invalid state parameter state: ${state} oauthState: ${req.session.oauthState}
-          ${req.session}
+        `Invalid state parameter state: ${state} oauthState: ${
+          req.session.oauthState
+        }
+          ${JSON.stringify(req.session)}
           `
       );
     }
