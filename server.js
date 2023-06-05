@@ -299,7 +299,7 @@ app.get("/api/square/oauth/callback", async (req, res) => {
         `Invalid state parameter state: ${state} oauthState: ${
           req.session.oauthState
         }
-          ${JSON.stringify(req.session)}
+          ${JSON.stringify(req)}
           `
       );
     }
