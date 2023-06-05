@@ -295,13 +295,11 @@ app.get("/api/square/oauth/callback", async (req, res) => {
       console.log(state);
       console.log(req.session.oauthState);
       // the state does  not match, so abort the process
-      return res.status(400).send(
-        `Invalid state parameter state: ${state} oauthState: ${
-          req.session.oauthState
-        }
-          ${JSON.stringify(req)}
-          `
-      );
+      return res
+        .status(400)
+        .send(
+          `Invalid state parameter state: ${state} oauthState: ${req.session.oauthState}`
+        );
     }
 
     const response = await axios.post(
