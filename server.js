@@ -41,8 +41,8 @@ app.use(
   session({
     secret: "FOODFOR002", // you should choose your own secret value here
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }, // 'auto' means use secure cookies over HTTPS, non-secure over HTTP
+    saveUninitialized: false,
+    cookie: { secure: true }, // 'auto' means use secure cookies over HTTPS, non-secure over HTTP
   })
 );
 // app.get("/set-cookie", (req, res) => {
