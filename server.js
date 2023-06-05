@@ -309,6 +309,12 @@ app.get("/api/square/oauth/callback", async (req, res) => {
         client_secret: SQUARE_APP_SECRET,
         code,
         grant_type: "authorization_code",
+      },
+      {
+        headers: {
+          "Square-Version": "2021-05-13",
+          "Content-Type": "application/json",
+        },
       }
     );
     const { access_token } = response.data;
